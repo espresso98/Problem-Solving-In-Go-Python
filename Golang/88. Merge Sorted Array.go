@@ -20,7 +20,7 @@ func merge(nums1 []int, m int, nums2 []int, n int)  {
             i--
         } else {
             nums1[r] = nums2[j]
-			j--
+	    j--
         }
         r--
     } 
