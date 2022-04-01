@@ -16,8 +16,8 @@ class DiningPhilosophers:
                    putLeftFork: 'Callable[[], None]',
                    putRightFork: 'Callable[[], None]') -> None:
         
-        left = min(philosopher, (philosopher + 1) % 5)
-        right = max(philosopher, (philosopher + 1) % 5)
+        left = max(philosopher, (philosopher + 1) % 5)
+        right = min(philosopher, (philosopher + 1) % 5)
         
         with self.locks[left]: 
             with self.locks[right]: 
