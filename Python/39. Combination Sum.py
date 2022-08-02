@@ -7,11 +7,11 @@ class Solution:
                 result.append(curr.copy())
             elif target < 0:
                 return
-
             for i in range(start, len(candidates)):
-                curr.append(candidates[i])
-                dfs(target - candidates[i], curr, i)
-                curr.pop()
+                if candidates[i] <= target:
+                    curr.append(candidates[i])
+                    dfs(target - candidates[i], curr, i)
+                    curr.pop()
         
         dfs(target, [], 0)
         return result
