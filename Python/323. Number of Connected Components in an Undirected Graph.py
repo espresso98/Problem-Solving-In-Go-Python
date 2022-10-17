@@ -19,7 +19,7 @@ class Solution:
                 count += 1
         return count
 
-# Solution 2: Union Find, TC: O(E⋅α(n)) SC: O(V)
+# Solution 2: Union Find, TC: O(V+E⋅α(V)) ≈ O(V+E), SC: O(V)
 class UnionFind:
     def __init__(self, size):
         self.root = [i for i in range(size)]
