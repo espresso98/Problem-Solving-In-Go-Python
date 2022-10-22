@@ -38,3 +38,4 @@ class Solution:
         C = list(map(build_palindrome, (P-1, P, P+1))) # [111, 121, 131]
         # pick the candidate having min abs difference
         return str(min((c for c in C if c != num), key=lambda c: abs(num-c)))
+        
