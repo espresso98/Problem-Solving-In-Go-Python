@@ -21,3 +21,4 @@ class Solution:
             max_dist = max(max_dist, cur - prev)  # len(seats)-1-prev
             
         return max_dist
+        
