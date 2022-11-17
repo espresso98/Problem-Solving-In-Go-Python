@@ -9,4 +9,5 @@ class Solution:
             return range // 2
 
         # Solution 2
-        return (high + 1) // 2 - low//2   
+        return (high + 1) // 2 - low // 2   
+        
