@@ -6,9 +6,10 @@
 # dp[0]    dp[1]     dp[2]      dp[3]      dp[4]
 #   2     2 or 7   7 or 2+9  11 or 7+3   11 or 11+1
 
+from typing import List
+# Solution1. TC: O(N), SC: O(N)
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        # Solution1. TC: O(N), SC: O(N)
         if not nums: return 0
         if len(nums) < 3: return max(nums)
 
@@ -18,9 +19,10 @@ class Solution:
             dp[i] = max(dp[i-1], dp[i-2]+ nums[i])
         return dp[-1]
 
-
-        # Solution 2. TC: O(N), SC: O(1)
+# Solution 2. TC: O(N), SC: O(1)
+class Solution2:
+    def rob(self, nums: List[int]) -> int:
         prev, cur = 0, 0
         for n in nums: 
-            prev, cur = cur, max(prev + n, cur)  
+            prev, cur = cur, max(cur, prev + n)  
         return cur
