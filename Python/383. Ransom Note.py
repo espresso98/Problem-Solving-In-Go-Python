@@ -6,6 +6,11 @@ class Solution:
             return False
 
         mag_cnt = Counter(magazine)
+        
+        # mag_cnt = {}
+        # for ch in magazine:
+        #     mag_cnt[ch] = mag_cnt.get(ch, 0) + 1
+
         for ch in ransomNote:
             if ch not in mag_cnt or mag_cnt[ch] <= 0:
                 return False
