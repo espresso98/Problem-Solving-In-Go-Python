@@ -1,4 +1,4 @@
-# One Hash Map. O(N), 0(26) -> 0(1)
+# One Hash Map. O(N), O(26) -> O(1)
 from collections import Counter
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
@@ -6,7 +6,7 @@ class Solution:
             return False
 
         mag_cnt = Counter(magazine)
-        
+
         # mag_cnt = {}
         # for ch in magazine:
         #     mag_cnt[ch] = mag_cnt.get(ch, 0) + 1
