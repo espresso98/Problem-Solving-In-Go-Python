@@ -1,5 +1,5 @@
 # max_path_sum = max(max_path_sum, left_gain + right_gain + root.val)
-#  O(n, )O(n)
+# O(n), O(n)
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
         def tree_path_sum(node):
