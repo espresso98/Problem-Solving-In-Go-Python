@@ -10,7 +10,9 @@ class Bank:
                 self.balance[account1-1] -= money
                 self.balance[account2-1] += money
                 self.print_line()
-                print(f"Transferred ${money} from account{account1} to account{account2}! \nCurrent balance of the account{account1} is ${self.balance[account1-1]}.")
+                print(f"Transferred ${money} from account{account1} to account{account2}! \
+                \nCurrent balance of the account{account1} is ${self.balance[account1-1]}.\
+                \nCurrent balance of the account{account2} is ${self.balance[account2-1]}.")
                 return True
             self.print_line()
             print("Low balance!")
@@ -66,8 +68,9 @@ Stdout
 Withdrew $10 from account3! 
 Current balance is $10.
 --------------------------------------------
-Transferred $20 from account5 to account1! 
-Current balance of the account5 is $10.
+Transferred $20 from account5 to account1!                 
+Current balance of the account5 is $10.                
+Current balance of the account1 is $30.
 --------------------------------------------
 Deposited $20 to account5! 
 Current balance is $30.
