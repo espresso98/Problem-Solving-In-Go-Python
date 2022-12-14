@@ -1,7 +1,8 @@
 # O(N^2), O(N)
 class Solution:
     def minFallingPathSum(self, matrix: List[List[int]]) -> int:
-        n, M = len(M), matrix
+        M = matrix
+        n = len(M)
         dp = [float('inf')] + M[0] + [float('inf')]
 
         for i in range(1, n):
