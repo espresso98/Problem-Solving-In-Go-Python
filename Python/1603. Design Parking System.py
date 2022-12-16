@@ -17,23 +17,23 @@ class ParkingSystem:
 # [[1,1,0],[1],[2],[3],[1]]
 class ParkingSystem2:
     def __init__(self, big: int, medium: int, small: int):
-        self.size = { 1: big, 2: medium, 3: small }
+        self.parking = { 1: big, 2: medium, 3: small }
         # print(self.parking[1], self.parking[2], self.parking[3]) # [1,1,0]
 
     def addCar(self, carType: int) -> bool:
-        if self.size[carType]:
-            self.size[carType] -= 1
+        if self.parking[carType]:
+            self.parking[carType] -= 1
             return True
         return False
 
 
 class ParkingSystem3:
     def __init__(self, big, medium, small):
-        self.size = [big, medium, small]
+        self.parking = [big, medium, small]
 
     def addCar(self, carType):
-        self.size[carType-1] -= 1
-        return self.size[carType-1] >= 0
+        self.parking[carType-1] -= 1
+        return self.parking[carType-1] >= 0
 
 # Your ParkingSystem object will be instantiated and called as such:
 # obj = ParkingSystem(big, medium, small)
