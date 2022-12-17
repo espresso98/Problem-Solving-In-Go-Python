@@ -33,12 +33,9 @@ class StockPrice:
     # O(K*logK) where K = number of elements in heap, O(1)
     def maximum(self) -> int:
         # Finds the maximum price the stock has been based on the current records.
-        print(self.stock_price)
-        print(self.max_heap)
         price, timestamp = self.max_heap[0]
         while -price != self.stock_price[timestamp]:
             heappop(self.max_heap)
-            print(self.max_heap)
             price, timestamp = self.max_heap[0]
         return -price
 
@@ -48,7 +45,6 @@ class StockPrice:
         price, timestamp = self.min_heap[0]
         while price != self.stock_price[timestamp]:
             heappop(self.min_heap)
-            # print(self.min_heap)
             price, timestamp = self.min_heap[0]
         return price
         
