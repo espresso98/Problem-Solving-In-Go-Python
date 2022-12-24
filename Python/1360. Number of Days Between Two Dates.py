@@ -9,7 +9,7 @@ class Solution:
 
 class Solution2:
     def daysBetweenDates(self, date1: str, date2: str) -> int:
-        leap = lambda y: bool(y % 400 == 0 or (y % 4 == 0 and y % 100 != 0))
+        leap = lambda y: y % 400 == 0 or (y % 4 == 0 and y % 100 != 0)
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         
         def f(date):
@@ -17,4 +17,3 @@ class Solution2:
             x = 365 * (y - 1971) + sum(map(leap, range(1971, y)))
             return x + sum(days[:m-1]) + d + (m > 2 and leap(y))
         return abs(f(date1) - f(date2))
-        
