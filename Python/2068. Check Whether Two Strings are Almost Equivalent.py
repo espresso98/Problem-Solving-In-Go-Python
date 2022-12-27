@@ -23,10 +23,18 @@ class Solution2:
         return True
 
 # Solution3
- class Solution3:
+class Solution3:
     def checkAlmostEquivalent(self, word1: str, word2: str) -> bool:
         w1, w2 = Counter(word1), Counter(word2)
         for ch in set(list(w1.keys()) + list(w2.keys())):
             if abs(w1[ch] - w2[ch]) > 3:
                 return False
         return True
+
+# Solution4
+# Subtraction of two Counters: Counts of common elements are subtracted from each other and (keeps only positive counts) 
+class Solution4:
+    def checkAlmostEquivalent(self, word1: str, word2: str) -> bool:
+        wc1, wc2 = Counter(word1), Counter(word2)
+        return all(diff <= 3 for diff in ((wc1 - wc2) + (wc2 - wc1)).values())
+        
