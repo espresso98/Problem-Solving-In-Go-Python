@@ -7,7 +7,7 @@ class Solution:
         points.sort(key=lambda x: x[1])
         res = 1
         prev_end = points[0][1]
-        
+
         for i in range(1, len(points)):
             start, end = points[i][0], points[i][1]
             if start > prev_end: 
@@ -15,3 +15,16 @@ class Solution:
                 res += 1
                 prev_end = end 
         return res
+
+import math
+class Solution2:
+    def findMinArrowShots(self, points: List[List[int]]) -> int:
+        points.sort(key=lambda x: x[1])
+        res = 0
+        prev_end = -math.inf
+
+        for start, end in points:
+            if start > prev_end:
+                res += 1
+                prev_end = end
+        return res 
