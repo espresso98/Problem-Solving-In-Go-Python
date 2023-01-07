@@ -13,7 +13,8 @@ class Solution:
                 return 1
             return 0
 
-        return sum(dfs(i,j) for i in range(M) for j in range(N))
+        return sum(dfs(i,j) for i in range(M) for j in range(N) if grid[i][j] == '1')
+
 
 
 class Solution2:
