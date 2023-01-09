@@ -39,8 +39,8 @@ class Solution2:
     def maxPoints(self, points: List[List[int]]) -> int:
         res = 0 
         for i, (x0,y0) in enumerate(points[:-1]):
-            slope_cnts = Counter(((x-x0)/(y-y0) if (y-y0) != 0 else inf) for x,y in points[i+1:])
-            # Counter({2.0: 2, inf: 1, 0.5: 1, 0.0: 1}) inf: y=y0, 0.0: x=x0
+            slope_cnts = Counter(((y-y0)/(x-x0) if (x-x0) != 0 else None) for x,y in points[i+1:])
+            # Counter({0.5: 2, 0.0: 1, 2.0: 1, None: 1})  None: x=x0,  0.0: y=y0 
             res = max(res, max(slope_cnts.values()))
         return res + 1
 
