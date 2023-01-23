@@ -1,4 +1,5 @@
-# BFS. TC: O(N*l), SC: O(N*l) where N is the number of urls and l is the length of url
+# BFS
+# TC: O(N*l), SC: O(N) where N is the number of urls and l is the length of htmlParser.getUrls(url). O(nextUrl.length)=O(l) time
 # We can model the problem with a directed graph where each URL is a vertex/node, and links between them are edges.
 # The problem is asking us to traverse the graph visiting only URLs with the same hostname as the one of the start URL.
 import collections
