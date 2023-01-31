@@ -17,6 +17,7 @@ class Solution2:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         for num in nums:
             new_idx = abs(num) - 1   # val -> idx 
-            nums[new_idx] = -abs(nums[new_idx])      # negative mark
+            if nums[new_idx] > 0:
+                nums[new_idx] *= -1      # negative mark for visited elem
         return [i + 1 for i, num in enumerate(nums) if num > 0]  # idx -> val
-
+        
