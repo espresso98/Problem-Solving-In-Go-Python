@@ -36,3 +36,29 @@ The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
 """
+
+
+# O(N) / O(1)
+# Approach: Sliding Window with HashMap
+class Solution2:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        if len(p) > len(s):
+             return []
+        
+        p_cnt, s_cnt = defaultdict(int), defaultdict(int)
+        for i in range(len(p)):
+            p_cnt[p[i]] += 1 
+            s_cnt[s[i]] += 1
+
+        res = [0] if s_cnt == p_cnt else []  
+        l = 0
+        for r in range(len(p), len(s)):
+            s_cnt[s[r]] += 1
+            s_cnt[s[l]] -= 1
+            if s_cnt[s[l]] == 0:
+                s_cnt.pop(s[l])
+            l += 1
+            if s_cnt == p_cnt:
+                res.append(l)
+            
+        return res
