@@ -23,7 +23,7 @@ class Solution:
 # bisect_left(arr, x): Locate the insertion point for x in a to maintain sorted order.
 # If x is already present in a, the insertion point will be before (to the left of) any existing entries. 
 # (1) if x is larger than all tails, append it
-# (2) if tails[i-1] < x <= tails[i], update tails[i]
+# (2) if tails[i-1] < x < tails[i], update tails[i]
 from bisect import bisect_left
 class Solution2:
     def lengthOfLIS(self, nums: List[int]) -> int:
@@ -33,7 +33,7 @@ class Solution2:
             print(i)
             if i == len(LIS): #  If num is greater than any element in LIS, just append
                 LIS.append(num)
-            else:   # replace the first el in LIS which is greater than or equal to num
+            elif num < LIS[i]:   # replace the first el in LIS which is greater than num
                 LIS[i] = num
         return len(LIS)
 
